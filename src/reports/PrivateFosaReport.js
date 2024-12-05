@@ -33,9 +33,9 @@ const PrivateFosaReport = (props) => {
         <PublishedComponent
           pubRef="core.DatePicker"
           value={values.dateFrom}
-          module="Csu"
+          module="Comores"
           required
-          label="csu.dateFrom"
+          label="Comores.dateFrom"
           onChange={(dateFrom) => setValues({ ...values, dateFrom })}
         />
       </Grid>
@@ -43,9 +43,9 @@ const PrivateFosaReport = (props) => {
         <PublishedComponent
           pubRef="core.DatePicker"
           value={values.dateTo}
-          module="Csu"
+          module="Comores"
           required
-          label="csu.dateTo"
+          label="Comores.dateTo"
           onChange={(dateTo) => setValues({ ...values, dateTo })}
         />
       </Grid>
