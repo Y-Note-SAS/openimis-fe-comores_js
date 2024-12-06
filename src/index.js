@@ -2,14 +2,12 @@ import messages_en from "./translations/en.json";
 import PublicFosaReport from "./reports/PublicFosaReport";
 import PrivateFosaReport from "./reports/PrivateFosaReport"
 
-
-
 const DEFAULT_CONFIG = {
   translations: [{ key: "en", messages: messages_en }],
   reports: [
     {
       key: "invoice_private_fosa",
-      component: PublicFosaReport,
+      component: PrivateFosaReport,
       isValid: (values) => values.dateFrom && values.dateTo,
       getParams: (values) => ({
         date_from: values.dateFrom,
@@ -19,7 +17,7 @@ const DEFAULT_CONFIG = {
     },
     {
       key: "invoice_public_fosa",
-      component: PrivateFosaReport,
+      component: PublicFosaReport,
       isValid: (values) => values.dateFrom && values.dateTo,
       getParams: (values) => ({
         date_from: values.dateFrom,

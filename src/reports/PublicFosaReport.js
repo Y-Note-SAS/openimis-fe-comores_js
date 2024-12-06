@@ -15,7 +15,6 @@ const PublicFosaReport = (props) => {
   const onHealtFacilityChange = (hflocation)=>{
       setValues({...values, hflocation})
   }
-  console.log(values);
   return (
     <Grid container direction="column" spacing={1}>
       <Grid item>
@@ -30,7 +29,7 @@ const PublicFosaReport = (props) => {
       </Grid>
       <Grid item>
         <PublishedComponent
-          pubRef="core.DatePicker"
+          pubRef="core.MonthYearPicker"
           value={values.dateFrom}
           module="Comores"
           required
@@ -40,7 +39,7 @@ const PublicFosaReport = (props) => {
       </Grid>
       <Grid item>
         <PublishedComponent
-          pubRef="core.DatePicker"
+          pubRef="core.MonthYearPicker"
           value={values.dateTo}
           module="Comores"
           required
