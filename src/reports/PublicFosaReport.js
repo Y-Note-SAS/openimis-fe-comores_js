@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import { PublishedComponent } from "@openimis/fe-core";
+import { PublishedComponent, useModulesManager, useTranslations } from "@openimis/fe-core";
 import React from "react";
 import { injectIntl } from "react-intl";
 import { useSelector } from "react-redux";
@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 const PublicFosaReport = (props) => {
   const { values, setValues } = props;
   const userHealthFacility = useSelector((state) => state.loc.userHealthFacilityFullPath);
+  const modulesManager = useModulesManager();
+  const { formatMessage } = useTranslations("claim", modulesManager);
 
   if (userHealthFacility?.code) {
     values.hflocation = userHealthFacility
@@ -24,7 +26,8 @@ const PublicFosaReport = (props) => {
           onChange={(hflocation) =>
             onHealtFacilityChange(hflocation)
           }
-          value={userHealthFacility?.code ? userHealthFacility.code : values.hflocation}
+          label={formatMessage("ReportComores.hf")}
+          value={!!userHealthFacility ? userHealthFacility : values.hflocation}
         />
       </Grid>
       <Grid item>
